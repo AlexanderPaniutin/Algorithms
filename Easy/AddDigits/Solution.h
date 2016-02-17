@@ -1,3 +1,7 @@
+
+#ifndef SOLUTION_H_
+#define SOLUTION_H_
+
 class Solution {
 public:
     // to avoid recursion/loop - we can predefine all the combinations that possible could be having 2 digits
@@ -30,3 +34,5 @@ public:
         return acum;
     }
 };
+
+#endif // SOLUTION_H_
