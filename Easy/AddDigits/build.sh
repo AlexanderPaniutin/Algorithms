@@ -1,17 +1,27 @@
+CWD=$(pwd)
+
 # build gtest
 THIRD_PARTY_DIR="../../thirdParty"
 GTEST_DIR=$THIRD_PARTY_DIR/gtest-1.7.0
+cd $GTEST_DIR/make
+echo $(pwd)
+make clean
+make gtest_main.a
+cp gtest_main.a libgtest_main.a
+cd $CWD
+echo $(pwd)
+
 echo $GTEST_DIR
 
 # prepare the build folder to keep build clean and separated from sources
-mkdir build
-cd build
+#mkdir build
+#cd build
 
 # do the actual build
-cmake ..
 make
 ./Solution
+make clean
 
-# cleanup after build
-cd ..
-rm -rf build
+# make clean
+# cd ..
+# rm -rf build
