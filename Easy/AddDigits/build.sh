@@ -1,11 +1,12 @@
 CWD=$(pwd)
 
-# build gtest
+# setup third party libs
 THIRD_PARTY_DIR="../../thirdParty"
 GTEST_DIR=$THIRD_PARTY_DIR/gtest-1.7.0
+
+# build gtest
 cd $GTEST_DIR/make
 echo $(pwd)
-make clean
 make gtest_main.a
 cp gtest_main.a libgtest_main.a
 cd $CWD
