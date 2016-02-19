@@ -26,8 +26,8 @@ TEST_OBJ    :=
 
 # add GTest library into the executable
 GTEST_DIR   := ../../thirdParty/gtest-1.7.0
-GTEST_SRC   := $(shell find $(SRCDIR) -type f -name *_gtest.$(SRCEXT))
-GTEST_OBJ   := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(GTEST_SRC:.$(SRCEXT)=.$(OBJEXT)))
+#GTEST_SRC   := $(shell find $(SRCDIR) -type f -name *_gtest.$(SRCEXT))
+#GTEST_OBJ   := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(GTEST_SRC:.$(SRCEXT)=.$(OBJEXT)))
 INC         += -I$(GTEST_DIR)/include
 LIB         += -L$(GTEST_DIR)/make/ -lgtest_main
 
@@ -43,13 +43,9 @@ all: resources $(TARGET)
 #Remake
 remake: clean all
 
-#Copy Resources from Resources Directory (if present) to Target Directory
+#Copy Resources from Resources Directory to Target Directory
 resources: directories
-ifneq ($(wildcard $(RESDIR)),)
 	@cp -rf $(RESDIR)/ $(TARGETDIR)/
-else
-	@echo "Warn: $(RESDIR) is missing"
-endif
 
 #Make the Directories
 directories:
