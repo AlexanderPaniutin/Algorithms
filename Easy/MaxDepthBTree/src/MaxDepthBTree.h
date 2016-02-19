@@ -13,8 +13,9 @@ struct TreeNode {
      TreeNode *left;
      TreeNode *right;
      TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
 
-class Solution {
+class MaxDepthBTree {
 public:
     int maxDepth(TreeNode* root)
     {
@@ -43,5 +44,8 @@ public:
         
         if (root->right != NULL)
             return maxDepth(root->right) + 1;
+
+        // in case we did not cover all the cases
+        return -1;
     }
 };
