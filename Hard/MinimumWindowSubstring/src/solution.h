@@ -14,9 +14,9 @@ class Solution
  private:
   int leftEdge;
   int rightEdge;
-  static const int arrSize = 255;
+  static const int arrSize = 256;
   char charsOfT[arrSize];
-  char charsTInGap[arrSize];
+  long charsTInGap[arrSize];
   std::string result;
 
   // init internal data/state
