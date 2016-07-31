@@ -148,7 +148,7 @@ void Solution::moveLeftEdge(const std::string &s)
 
 void Solution::registerGap(const std::string &s)
 {
-
+  // the way to optimize is to keep edges and only at the end - generate string
   if (leftEdge == -1 || rightEdge == -1)
     return;
 
